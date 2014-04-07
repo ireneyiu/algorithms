@@ -13,13 +13,30 @@ class Node
 end
 
 def is_balanced?(root)
-  (get_height(root.left) - get_height(root.right)).abs <= 1
+  get_height(root) > -1
 end
 
 def get_height(node)
   return 0 unless node
+  
+  left_height = get_height(node.left)
+  return -1 if left_height == -1
+  
+  right_height = get_height(node.right)
+  return -1 if right_height == -1
+
+  return -1 if [left_height - right_height].max > 1
   return (1 + [get_height(node.left), get_height(node.right)].max)
 end
+
+# def is_balanced?(root)
+#   (get_height(root.left) - get_height(root.right)).abs <= 1
+# end
+
+# def get_height(node)
+#   return 0 unless node
+#   return (1 + [get_height(node.left), get_height(node.right)].max)
+# end
 
 # True example: 8-3-10-1-6-9-14
 
