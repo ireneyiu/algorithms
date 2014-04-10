@@ -1,5 +1,8 @@
 algorithms
 ==========
 
-My practice with algorithm problems:
-https://github.com/blakeembrey/code-problems
+My practice with algorithm problems.
+
+Sources:
+- https://github.com/blakeembrey/code-problems
+- Cracking the Coding Interview 
