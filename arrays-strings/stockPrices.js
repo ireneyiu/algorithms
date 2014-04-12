@@ -17,6 +17,17 @@ function bestProfit(stockPricesYesterday) {
   return maxProfit;
 }
 
+function bestProfitOptimized(stockPricesYesterday) {
+  var minPrice;
+  var maxProfit = 0;
+  for (var mins in stockPricesYesterday) {
+    var currentPrice = stockPricesYesterday[mins];
+    minPrice = Math.min(minPrice, currentPrice) || currentPrice;
+    maxProfit = Math.max(maxProfit, currentPrice-minPrice);
+  }
+  return maxProfit;
+}
+
 var stockPrices = {
   60: 100,
   70: 200,
