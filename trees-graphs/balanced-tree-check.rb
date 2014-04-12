@@ -12,5 +12,5 @@ end
 
 def get_height(node)
   return 0 unless node
-  return (1 + Math.max[get_height(node.left), get_height(node.right)])
+  return (1 + [get_height(node.left), get_height(node.right)].max)
 end
