@@ -15,9 +15,12 @@ Pseudocode:
 
 
 def flatten(elements, results=[])
-  return elements unless elements.is_a?(Array)
   elements.each do |element|
-    results << flatten(element, results)
+    if element.is_a?(Array)
+      flatten(element, results)
+    else
+      results << element
+    end
   end
   results
 end
