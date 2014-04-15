@@ -13,8 +13,6 @@ end
 
 def paths_by_sum(node, sum, path=[], level=0)
   return unless node
-  p node.data
-  p path
   path << node.data
   total = 0
   level.downto(0) do |i|
@@ -25,7 +23,7 @@ def paths_by_sum(node, sum, path=[], level=0)
   paths_by_sum(node.left, sum, path, level + 1)
   paths_by_sum(node.right, sum, path, level + 1)
 
-  path[level] = 0
+  path.delete_at(level)
 end
 
 node4 = Node.new(4)
