@@ -16,6 +16,15 @@ def factorial_tail(n, total=1)
   factorial_tail(n-1, total*n)
 end
 
+def factorial_iterative(n)
+  factorial = 1;
+  n.times do |i|
+    factorial *= i+1
+  end
+  factorial
+end
+
 p factorial(4) #== 24
 p factorial_tail(4) #== 24
+p factorial_iterative(4)
 
